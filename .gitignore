@@ -1,0 +1,9 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Local data (optional, keep if you want to share memory)
+# memory.json
