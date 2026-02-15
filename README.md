@@ -1,6 +1,6 @@
 # AI Marketing Agent for Small Business
 
-A minimal, production-ready AI agent that generates, evaluates, and revises Instagram posts. It features safety guardrails, quality control, and long-term memory.
+A minimal, production-ready AI agent that generates, evaluates, and revises Instagram posts. It features safety guardrails, quality control, long-term memory, and a user-friendly Web UI.
 
 ## Features
 
@@ -8,6 +8,7 @@ A minimal, production-ready AI agent that generates, evaluates, and revises Inst
 - **Safety Guardrails**: Blocks hate speech, medical claims, and financial scams.
 - **Quality Control**: Ensures posts are under 150 words and use < 10 hashtags.
 - **Long-Term Memory**: Learns your brand tone and hashtags over time (stored in `memory.json`).
+- **Web Interface**: Simple, interactive UI built with Streamlit.
 - **Robustness**: Auto-retries on API failures.
 
 ## Setup
@@ -30,13 +31,22 @@ A minimal, production-ready AI agent that generates, evaluates, and revises Inst
 
 ## Usage
 
-Run the agent from the terminal:
+### 1. Web Interface (Recommended)
+Launch the visual interface to interact with the agent easily:
+
+```bash
+streamlit run app.py
+```
+This will open a browser window where you can input your business details and see live execution logs.
+
+### 2. Command Line Interface (CLI)
+Alternatively, run the agent directly from the terminal:
 
 ```bash
 python main.py
 ```
 
-### Example Interaction
+## Example Interaction (CLI)
 
 ```text
 Enter your post request: Promote our new matcha latte with a summer vibe.
@@ -53,8 +63,9 @@ Quality Score: 9/10
 
 ## File Structure
 
-- `main.py`: Entry point. Runs the agent.
+- `app.py`: Streamlit UI application.
+- `main.py`: CLI entry point to run the agent.
 - `graph.py`: The brain. Defines the workflow nodes and logic.
-- `prompts.py`: strict instructions for the AI.
+- `prompts.py`: Strict instructions for the AI.
 - `memory_manager.py`: Handles reading/writing to `memory.json`.
 - `state.py`: Data structure passed between nodes.
